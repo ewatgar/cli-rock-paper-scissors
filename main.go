@@ -42,10 +42,10 @@ func main() {
 
 		switch battleStatus {
 		case status.Win:
-			color.Green(fmt.Sprint("You won!", playerOption, "beats", rivalOption))
+			color.Green(fmt.Sprint("You won! ", playerOption, " beats ", rivalOption))
 			return
 		case status.Lose:
-			color.Red(fmt.Sprint("You lost...", rivalOption, "beats", playerOption))
+			color.Red(fmt.Sprint("You lost... ", rivalOption, " beats ", playerOption))
 			return
 		case status.Stalemate:
 			color.Yellow("Stalemate! Try again")
