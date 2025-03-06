@@ -35,30 +35,31 @@ func CheckWinStatus(player option.GameOption, rival option.GameOption) GameStatu
 		return Stalemate
 	}
 
+	var status GameStatus
 	// paper > rock > scissors > paper
 	switch player {
 	case option.Rock:
 		if rival == option.Scissors {
-			return Win
+			status = Win
 		}
 		if rival == option.Paper {
-			return Lose
+			status = Lose
 		}
 	case option.Paper:
 		if rival == option.Rock {
-			return Win
+			status = Win
 		}
 		if rival == option.Scissors {
-			return Lose
+			status = Lose
 		}
 	case option.Scissors:
 		if rival == option.Paper {
-			return Win
+			status = Win
 		}
 		if rival == option.Rock {
-			return Lose
+			status = Lose
 		}
 	}
 
-	return Stalemate
+	return status
 }
